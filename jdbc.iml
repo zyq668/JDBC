@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="some-jars" level="project" />
+    <orderEntry type="library" name="dbcp" level="project" />
   </component>
 </module>
