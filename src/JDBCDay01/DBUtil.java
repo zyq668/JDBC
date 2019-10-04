@@ -34,7 +34,7 @@ public class DBUtil {
             pwd = prop.getProperty("pwd");
             //注册驱动
             Class.forName(driver);
-
+            //经过测试，驱动不写也会自动加载
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -57,7 +57,7 @@ public class DBUtil {
         }
     }
     //提供全面，关闭工作流
-    public static void closeConnecion(){
+    public static void closeConnection(){
         try {
             Connection conn = tl.get();
             if(conn != null){

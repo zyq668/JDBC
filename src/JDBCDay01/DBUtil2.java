@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class DBUtil2 {
-    private static String url,user,pwd;
     //数据库连接池
     private static BasicDataSource ds;
     //为不同线程管理连接
@@ -16,7 +15,7 @@ public class DBUtil2 {
     static {
         try {
             Properties prop = new Properties();
-            InputStream is = DBUtil2.class.getClassLoader().getResourceAsStream(
+            InputStream is = DBUtil2.class.getResourceAsStream(
                  "/JDBCDay01/config.properties"
             );
             prop.load(is);
@@ -24,13 +23,13 @@ public class DBUtil2 {
             //初始化连接池
             ds = new BasicDataSource();
             //设置驱动（Class.forName()）
-            ds.setDriverClassName(prop.getProperty("driver"));
+            //ds.setDriverClassName(prop.getProperty("driver").trim());
             //设置url
-            ds.setUrl(prop.getProperty("url"));
+            ds.setUrl(prop.getProperty("url").trim());
             //设置用户名
-            ds.setUsername(prop.getProperty("user"));
+            ds.setUsername(prop.getProperty("user").trim());
             //设置数据库密码
-            ds.setPassword(prop.getProperty("pwd"));
+            ds.setPassword(prop.getProperty("pwd").trim());
             //最大连接数量
             ds.setMaxActive(Integer.parseInt(prop.getProperty("maxactive")));
             //初始的连接数
@@ -47,7 +46,7 @@ public class DBUtil2 {
             e.printStackTrace();
         }
     }
-    public static Connection getConnnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         //通过连接池获取一个空闲连接
         Connection conn =ds.getConnection();
         tl.set(conn);

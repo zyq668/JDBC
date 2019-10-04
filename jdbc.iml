@@ -7,7 +7,33 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="some-jars" level="project" />
-    <orderEntry type="library" name="dbcp" level="project" />
+    <orderEntry type="library" exported="" name="Usually_jar" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-5.1.48-bin" level="project" />
+    <orderEntry type="library" exported="" name="commons-collections4-4" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../Usually_jar" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file://$MODULE_DIR$/../Usually_jar/commons-collections4-4.1/apidocs" />
+          <root url="file://$MODULE_DIR$/../Usually_jar/ususlly__jar/commons-dbutils-1.6/apidocs" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../Usually_jar" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../Usually_jar" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../Usually_jar" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Usually_jar/commons-collections4-4.1/commons-collections4-4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

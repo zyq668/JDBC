@@ -1,28 +1,23 @@
-package JDBCDay01;
+package homework;
+
+import JDBCDay01.DBUtil2;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class JDBCDemo {
+public class Test1 {
     public static void main(String[] args) {
         try {
             Connection conn = DBUtil2.getConnection();
-            System.out.println("连接成功");
             Statement state = conn.createStatement();
             String sql = "SELECT * FROM emp";
             ResultSet rs = state.executeQuery(sql);
-            while (rs.next()) {
+            while (rs.next()){
                 int id = rs.getInt("id");
                 String username = rs.getString("username");
-                System.out.println("id:" + id + "  " + "username:" + username);
+                System.out.println("id:"+id+"  "+username);
             }
-            /*
-            当不在通过statement执行其他sql时，
-            应当及时关闭statement，以释放JDBC与数据库的资源占用。
-             */
-            state.close();
-            //使用后关闭连接
             DBUtil2.closeConnection();
         }catch (Exception e){
             e.printStackTrace();
