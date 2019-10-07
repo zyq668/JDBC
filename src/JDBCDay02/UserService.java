@@ -50,10 +50,10 @@ public class UserService {
     public static void reguser(Scanner scan){
         try {
             System.out.println("请输入用户名:");
-            String username = scan.nextLine();
+            String username = scan.next();
             System.out.println("请输入密码:");
-            String password = scan.nextLine();
-            System.out.println(username + "  " + password);
+            String password = scan.next();
+
 
         }catch (Exception e){
             e.printStackTrace();
