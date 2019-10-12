@@ -1,5 +1,6 @@
 package com.tarena.shoot;
 
+import java.awt.image.ShortLookupTable;
 import java.util.Random;
 
 public class Bee extends FlyingObject implements Award {
@@ -19,5 +20,22 @@ public class Bee extends FlyingObject implements Award {
     @Override
     public int getType() {
         return 0;
+    }
+
+    @Override
+    public void step() {
+        x += xSpeed;
+        y += ySpeed;
+        if(x<0){
+            xSpeed = 1;
+        }
+        if(x>ShootGame.WIDTH - width){
+            xSpeed = -1;
+        }
+    }
+    /**重写出界*/
+    @Override
+    public boolean outofBounds() {
+        return y > ShootGame.HEIGHT;
     }
 }

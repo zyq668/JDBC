@@ -17,7 +17,7 @@ public class Demo1 {
             String sql = "INSERT INTO Test"+
                     " (id,name,age,sex,addr)"+
                     " VALUES"+
-                    " (8,'ba',8,1,'上海');";
+                    " (8,'ba',8,1,'上海')";
             System.out.println(sql);
             int flag = state.executeUpdate(sql);
             if(flag>0){
